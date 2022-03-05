@@ -19,11 +19,14 @@ import java.util.Arrays;
  * i번째 병에 남아 있는 키위 주스의 양입니다.
  *
  * (입출력 데이터 예시)
- * capacities = {20, 20}
- * bottles = {5,8}
- * fromId = {0}
- * toId = {1}
+ * capacities = {20, 20} // 2~50개의 요소를 가지며, 각 요소는 1~1000000 사이의 값을 갖습니다.
+ * bottles = {5,8} // capacities와 같은 수의 요소가 있는 배열이며, bottles[i]는 capacities[i]에 들어있는 주스를 의미합니다.
+ * fromId = {0} // 1~50개의 요소가 있는 배열입니다.
+ * toId = {1} // fromId와 같은 수의 요소가 있는 배열입니다.
  * 정답 = {0, 13}
+ *
+ * 변수 fromId와 toId는 0~(N-1) 사이의 값입니다. 이때 N은 변수 capacities의 항목 개수입니다.
+ * 변수 fromId[i]와 toId[i]는 서로 다른 값을 갖습니다.
  */
 public class Day05 {
 

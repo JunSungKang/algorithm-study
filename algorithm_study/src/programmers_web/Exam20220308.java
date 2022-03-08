@@ -28,6 +28,11 @@ public class Exam20220308 {
         return -1;
     }
 
+    /**
+     * 문제 풀이 시작 : 2022-03-08 22:45
+     * 문제 풀이 실제 완료 시간 : 2022-03-06 23:25
+     * 문제 풀이 목표 완료 시간 : 2022-03-06 23:45
+     */
     public static int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
 

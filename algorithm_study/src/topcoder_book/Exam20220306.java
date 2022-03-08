@@ -1,10 +1,8 @@
-package year_2022.month_03;
+package topcoder_book;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Problem.
@@ -26,41 +24,44 @@ import java.util.TreeMap;
  * return = 4
  * 각 요소는 1~15개의 문자이며, 각 문자는 영어 소문자입니다. i번째 요소 first[i]와 second[i]의 내용은 다릅니다.
  */
-public class Day06 {
+public class Exam20220306 {
 
     /**
      * 문제 풀이 시작 : 2022-03-06 00:00
      * 문제 풀이 실제 완료 시간 : 2022-03-06 00:32
      * 문제 풀이 목표 완료 시간 : 2022-03-06 01:00
      */
-    private static String[] first = {"fishing", "gardening", "swimming", "fishing"};
-    private static String[] second = {"hunting", "fishing", "fishing", "biting"};
-    private static int result = 4;
-
-    /*private static String[] first = {"variety", "diversity", "loquacity", "courtesy"};
-    private static String[] second = {"talking", "speaking", "discussion", "meeting"};
-    private static int result = 1;*/
-        
-    /*private static String[] first = {"t","o","p","c","o","d","e","r","s","i","n","g","l","e","r","o","u","n","d","m","a","t","c","h","f","o","u","r","n","i"};
-    private static String[] second = {"n","e","f","o","u","r","j","a","n","u","a","r","y","t","w","e","n","t","y","t","w","o","s","a","t","u","r","d","a","y"};
-    private static int result = 6;*/
-
-    public static void main(String[] args){
-
+    public static int solution(String[] first, String[] second) {
         Map<String, Integer> interest = new HashMap<>();
         for (int i=0; i<first.length; i++) {
             interest.merge(first[i], 1, (integer, integer1) -> integer + integer1);
             interest.merge(second[i], 1, (integer, integer1) -> integer+integer1);
         }
 
-        int maxCount = Collections.max(interest.values());
+        return Collections.max(interest.values());
+    }
+
+    public static void main(String[] args){
+        String[] first = {"fishing", "gardening", "swimming", "fishing"};
+        String[] second = {"hunting", "fishing", "fishing", "biting"};
+        int result = 4;
+
+        /*String[] first = {"variety", "diversity", "loquacity", "courtesy"};
+        String[] second = {"talking", "speaking", "discussion", "meeting"};
+        int result = 1;*/
+    
+        /*String[] first = {"t","o","p","c","o","d","e","r","s","i","n","g","l","e","r","o","u","n","d","m","a","t","c","h","f","o","u","r","n","i"};
+        String[] second = {"n","e","f","o","u","r","j","a","n","u","a","r","y","t","w","e","n","t","y","t","w","o","s","a","t","u","r","d","a","y"};
+        int result = 6;*/
+
+        int answer = solution(first, second);
 
         // 문제 풀이에서 나온 답
-        int testResult = maxCount;
+        int testResult = answer;
         // 실제 정답
         int realResult = result;
 
-        System.out.println("- 문제 풀이를 통한 정답 : " +maxCount);
+        System.out.println("- 문제 풀이를 통한 정답 : " +answer);
         System.out.println("- 실제 정답안 : " +realResult);
         System.out.println( realResult == testResult );
     }

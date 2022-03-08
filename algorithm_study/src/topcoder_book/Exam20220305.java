@@ -1,4 +1,4 @@
-package year_2022.month_03;
+package topcoder_book;
 
 import java.util.Arrays;
 
@@ -28,38 +28,14 @@ import java.util.Arrays;
  * 변수 fromId와 toId는 0~(N-1) 사이의 값입니다. 이때 N은 변수 capacities의 항목 개수입니다.
  * 변수 fromId[i]와 toId[i]는 서로 다른 값을 갖습니다.
  */
-public class Day05 {
+public class Exam20220305 {
 
     /**
      * 문제 풀이 시작 : 2022-03-05 15:55
      * 문제 풀이 실제 완료 시간 : 2022-03-05 16:26
      * 문제 풀이 목표 완료 시간 : 2022-03-05 16:55
      */
-    private static int[] capacities = {20,20};
-    private static int[] bottles = {5,8};
-    private static int[] fromId = {0};
-    private static int[] toId = {1};
-    private static int[] result = {0,13};
-
-    /*private static int[] capacities = {10,10};
-    private static int[] bottles = {5,8};
-    private static int[] fromId = {0};
-    private static int[] toId = {1};
-    private static int[] result = {3,10};*/
-
-    /*private static int[] capacities = {700000,800000,900000,1000000};
-    private static int[] bottles = {478478,478478,478478,478478};
-    private static int[] fromId = {2,3,2,0,1};
-    private static int[] toId = {0,1,1,3,2};
-    private static int[] result = {0,156956,900000,856956};*/
-
-    /*private static int[] capacities = {14,35,86,58,25,62};
-    private static int[] bottles = {6,34,27,38,9,60};
-    private static int[] fromId = {1,2,4,5,3,3,1,0};
-    private static int[] toId = {0,1,2,4,2,5,3,1};
-    private static int[] result = {0,14,65,35,25,35};*/
-
-    public static void main(String[] args){
+    public static int[] solution(int[] capacities, int[] bottles, int[] fromId, int[] toId) {
         int count = fromId.length;
         for (int i=0; i<count; i++) {
             int from = fromId[i];
@@ -76,8 +52,38 @@ public class Day05 {
             }
         }
 
+        return bottles;
+    }
+
+    public static void main(String[] args){
+        int[] capacities = {20,20};
+        int[] bottles = {5,8};
+        int[] fromId = {0};
+        int[] toId = {1};
+        int[] result = {0,13};
+
+        /*int[] capacities = {10,10};
+        int[] bottles = {5,8};
+        int[] fromId = {0};
+        int[] toId = {1};
+        int[] result = {3,10};*/
+    
+        /*int[] capacities = {700000,800000,900000,1000000};
+        int[] bottles = {478478,478478,478478,478478};
+        int[] fromId = {2,3,2,0,1};
+        int[] toId = {0,1,1,3,2};
+        int[] result = {0,156956,900000,856956};*/
+    
+        /*int[] capacities = {14,35,86,58,25,62};
+        int[] bottles = {6,34,27,38,9,60};
+        int[] fromId = {1,2,4,5,3,3,1,0};
+        int[] toId = {0,1,2,4,2,5,3,1};
+        int[] result = {0,14,65,35,25,35};*/
+            
+        int[] answer = solution(capacities, bottles, fromId, toId);
+
         // 문제 풀이에서 나온 답
-        String testResult = Arrays.toString(bottles);
+        String testResult = Arrays.toString(answer);
         // 실제 정답
         String realResult = Arrays.toString(result);
 

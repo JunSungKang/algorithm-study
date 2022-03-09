@@ -1,11 +1,8 @@
 package programmers_web;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 문제 제목
@@ -18,11 +15,36 @@ public class Exam20220309 {
 
     /**
      * 문제 풀이 시작 : 2022-03-09 11:30
-     * 문제 풀이 실제 완료 시간 : 2022-03-06 23:25
+     * 문제 풀이 실제 완료 시간 : 2022-03-10 00:10
      * 문제 풀이 목표 완료 시간 : 2022-03-10 00:30
      */
     public static int[] solution(int[] lottos, int[] win_nums) {
-        int[] answer = {};
+        List<Integer> win_nums_list = Arrays.stream(win_nums).boxed().collect(Collectors.toList());
+
+        final int[] zeroCount = {0};
+        long winnerCount = Arrays.stream(lottos)
+            .filter( lotto -> {
+                if (lotto == 0) {
+                    zeroCount[0]++;
+                    return false;
+                }
+                return true;
+            })
+            .filter( lotto -> win_nums_list.contains(lotto) )
+            .count();
+
+        // 정답
+        int rank = 0;
+        int[] answer = new int[2];
+
+        // 최고 등수 (0인 숫자가 모두 당첨인 경우)
+        rank = 7-((int)winnerCount+zeroCount[0]);
+        answer[0] = rank > 5 ? 6 : rank;
+
+        // 최저 등수 (0인 숫자가 모두 낙첨인 경우)
+        rank = 7-(int)winnerCount;
+        answer[1] = rank > 5 ? 6 : rank;
+
         return answer;
     }
 
@@ -38,6 +60,10 @@ public class Exam20220309 {
         /*int[] lottos = {45, 4, 35, 20, 3, 9};
         int[] win_nums = {20, 9, 3, 45, 4, 35};
         int[] result = {1, 1};*/
+
+        /*int[] lottos = {1, 2, 3, 4, 5, 6};
+        int[] win_nums = {11, 12, 13, 14, 15, 16};
+        int[] result = {6, 6};*/
 
         int[] answer = solution(lottos, win_nums);
 

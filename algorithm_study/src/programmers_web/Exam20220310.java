@@ -36,8 +36,8 @@ public class Exam20220310 {
 
     /**
      * 문제 풀이 시작 : 2022-03-10 20:40
-     * 문제 풀이 실제 완료 시간 : 2022-03-10 21:40
-     * 문제 풀이 목표 완료 시간 : 2022-03-10 21:30
+     * 문제 풀이 실제 완료 시간 : 2022-03-10 21:30
+     * 문제 풀이 목표 완료 시간 : 2022-03-10 21:40
      */
     public static int solution(int n, int[] lost, int[] reserve) {
         Arrays.sort(reserve);

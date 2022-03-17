@@ -98,12 +98,12 @@ public class Exam20220314 {
     }
 
     public static void main(String[] args){
-        /*int n = 1;
+        int n = 1;
         int east = 25;
         int west = 25;
         int south = 25;
         int north = 25;
-        double result = 1.0;*/
+        double result = 1.0;
 
         /*int n = 2;
         int east = 25;
@@ -118,13 +118,6 @@ public class Exam20220314 {
         int south = 0;
         int north = 50;
         double result = 1.0;*/
-
-        int n = 99;
-        int east = 50;
-        int west = 0;
-        int south = 0;
-        int north = 50;
-        double result = 0;
 
         double answer = solution(n, east, west, south, north);
 
